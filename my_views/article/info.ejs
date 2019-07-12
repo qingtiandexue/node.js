@@ -1,0 +1,8 @@
+<%-include('../layout/header.ejs')%>
+<h1 class="text-center"><%= data.title%></h1>
+<p class="text-center"><span><%= data.authorId%></span><span><%= data.ctime%></span> </p>
+<% if(isLogin){%>
+    <a class="btn btn-primary" href="/article/edit/<%= data.id%>">编辑</a>
+<% }%>
+<p><%= data.content%></p>
+<%-include('../layout/footer.ejs')%>

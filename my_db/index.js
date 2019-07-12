@@ -2,7 +2,7 @@ const mysql = require('mysql')
 
 const conn = mysql.createConnection({
   host: '127.0.0.1',
-  database: 'mysql_001',
+  database: 'mysql01',
   user: 'root',
   password: 'root',
   // 开启执行多条Sql语句的功能

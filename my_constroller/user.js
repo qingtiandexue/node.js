@@ -38,21 +38,15 @@ const reg = (req, res) => {
 }
 
 const login =(req,res)=>{
-
   const sql = "select * from blog_users where username=? and password=?"
   conn.query(sql,[req.body.username,req.body.password],(err,result)=>{
     if(err) return res.send({msg:'用户登录失败',status:500})
     if(result.length !== 1) return res.send({msg:'用户登录失败',status:501})
-
-
     req.session.user = result[0]
-    req.session.isLogin = true
-
+    req.session.isLogin = true  
     res.send({msg:'用户登录成功',status:200})
   })
 }
-
-
 const logout = (req,res) =>{
   req.session.destroy(()=>{
     res.redirect('/')
